@@ -57,8 +57,11 @@ function getReleaseData(html) {
   };
 }
 
-getAllBandcampArtistReleaseUrls(upscaleUrl).then(urls => {
-  urls.forEach(url => {
-    getRelease(url).then(result => console.log(result));
-  });
+getAllBandcampArtistReleaseUrls(upscaleUrl).then(async urls => {
+  const results = await Promise.all(
+    urls.map(async url => {
+      return await getRelease(url);
+    })
+  );
+  console.log(JSON.stringify(results));
 });
