@@ -30,7 +30,9 @@ async function getRelease(url) {
 function getReleaseData(html) {
   const $ = cheerio.load(html);
 
-  const description = $('meta[name="Description"]').attr("content");
+  const description = $('meta[name="Description"]')
+    .attr("content")
+    .trim();
   const releaseType = $('meta[property="og:type"]').attr("content");
   const albumArtFull = $('link[rel="image_src"]').attr("href");
   const url = $('meta[property="og:url"]').attr("content");
