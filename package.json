@@ -1,0 +1,16 @@
+{
+  "name": "bandcamp-scraper",
+  "version": "0.0.0",
+  "description": "A node.js program to pull bandcamp metadata about releases",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Alex Goodwin",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3"
+  }
+}
